@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "數位商品市集 | 繁體中文 AI 工具與模板",
-  description: "高品質繁體中文 AI Prompt 庫、AI 實戰課程、飛書模板市集 — 提升你的生產力與創造力",
+  title: "繁體 AI 數位商品市集 | AI Prompt 庫 | AI 課程 | 飛書模板",
+  description: "繁體中文第一套數位商品市集。高品質 AI Prompt 庫（100 個 verified prompt）、AI 實戰課程（4 單元 17 堂）、飛書/釘釘工作模板（13+ 套）。提升你的生產力與創造力。",
+  keywords: ["繁體 AI", "Prompt 庫", "ChatGPT 繁體中文", "AI 實戰課程", "飛書模板", "數位商品", "繁體中文", "AI 提示詞", "線上課程", "CRM 模板", "專案管理模板"],
 };
 
 export default function RootLayout({
