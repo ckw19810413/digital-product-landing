@@ -39,4 +39,4 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           projectName: digital-product-landing
           branch: main
-          directory: .
+          directory: out
