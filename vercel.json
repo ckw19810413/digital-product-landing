@@ -1,0 +1,19 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
+  "framework": "nextjs",
+  "git": {
+    "deploymentEnabled": {
+      "main": true
+    }
+  },
+  "env": [
+    {
+      "key": "NEXT_PUBLIC_GUMROAD_PRODUCTS",
+      "value": "[]"
+    }
+  ]
+}
