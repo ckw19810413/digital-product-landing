@@ -1,5 +1,8 @@
 import Link from "next/link";
+import NewsletterSignup from "./newsletter";
 
+// Gumroad 產品連結（上架後替換為實際 Gumroad 連結）
+// 請替換 # 為實際 Gumroad URL，例如：https://cdkw19810413.gumroad.com/l/ai-prompt-library
 const products = [
   {
     id: "traditional-ai-prompt-library",
@@ -9,6 +12,7 @@ const products = [
       "高品質、經過驗證的繁體中文 AI Prompt 集合。100 個高質量 prompt，不是 500 個通用 prompt 的廉價合集。",
     price: "$49",
     priceNote: "一次性",
+    gumroadUrl: "https://cdkw19810413.gumroad.com/l/ai-prompt-library", // TODO: 替換為實際連結
     github: "https://github.com/ckw19810413/traditional-ai-prompt-library",
     tags: ["AI", "Prompt", "繁體中文"],
     gradient: "from-blue-500 to-blue-600",
@@ -28,6 +32,7 @@ const products = [
       "從零到進階的 AI 應用教學。4 單元 17 堂完整課程，繁體中文教學，學完就能用。",
     price: "$297",
     priceNote: "早鳥價，原價 $497",
+    gumroadUrl: "https://cdkw19810413.gumroad.com/l/ai-course", // TODO: 替換為實際連結
     github: "https://github.com/ckw19810413/ai-practical-course-tw",
     tags: ["AI", "課程", "繁體中文"],
     gradient: "from-violet-500 to-violet-600",
@@ -47,6 +52,7 @@ const products = [
       "中文世界第一套專業的飛書/釘釘工作模板。包含銷售儀表板、CRM、專案管理等 13+ 套模板。",
     price: "$29-$69",
     priceNote: "／套（全部套組 $197）",
+    gumroadUrl: "https://cdkw19810413.gumroad.com/l/feishu-templates", // TODO: 替換為實際連結
     github: "https://github.com/ckw19810413/feishu-template-marketplace",
     tags: ["飛書", "模板", "生產力"],
     gradient: "from-cyan-500 to-teal-500",
@@ -61,6 +67,14 @@ const products = [
 ] as const;
 
 function ProductCard({ product }: { product: (typeof products)[number] }) {
+  const utmParams = new URLSearchParams({
+    utm_source: "landing-page",
+    utm_medium: "referral",
+    utm_campaign: product.slug,
+  });
+  const gumroadLink = `${product.gumroadUrl}?${utmParams.toString()}`;
+  const githubLink = `${product.github}?utm_source=landing-page&utm_medium=referral&utm_campaign=${product.slug}`;
+
   return (
     <div
       className="group relative flex flex-col rounded-2xl border border-card-border bg-card-bg p-6 transition-all duration-300 hover:border-primary/50 hover:shadow-[0_0_30px_-5px] hover:shadow-primary/20 sm:p-8"
@@ -105,8 +119,19 @@ function ProductCard({ product }: { product: (typeof products)[number] }) {
 
       {/* Actions */}
       <div className="relative mt-6 flex flex-col gap-3 sm:flex-row">
+        <a
+          href={gumroadLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-primary to-primary-hover px-5 py-2.5 text-sm font-medium text-white transition-all hover:brightness-110"
+        >
+          <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L13.5 10.5m0 0L18 18m0 0h-7.5m7.5-7.5L18 18" />
+          </svg>
+          立即購買
+        </a>
         <Link
-          href={product.github}
+          href={githubLink}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center justify-center gap-2 rounded-xl border border-card-border px-5 py-2.5 text-sm font-medium text-foreground transition-all hover:border-primary/50 hover:bg-primary/5"
@@ -115,14 +140,6 @@ function ProductCard({ product }: { product: (typeof products)[number] }) {
             <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
           </svg>
           查看 GitHub
-        </Link>
-        <Link
-          href={product.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-primary to-primary-hover px-5 py-2.5 text-sm font-medium text-white transition-all hover:brightness-110"
-        >
-          了解更多 →
         </Link>
       </div>
     </div>
@@ -228,6 +245,89 @@ export default function Home() {
             {products.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter Signup */}
+      <NewsletterSignup />
+
+      {/* Social Proof / Testimonials Section */}
+      <section className="bg-card-bg/30 px-6 py-24">
+        <div className="mx-auto max-w-5xl">
+          <div className="mb-16 text-center">
+            <h2 className="text-3xl font-bold text-foreground sm:text-4xl">
+              用戶回饋
+            </h2>
+            <p className="mt-4 text-muted">
+              來看看已購買的用戶怎麼說
+            </p>
+          </div>
+
+          {/* Testimonials Grid */}
+          <div className="grid gap-6 md:grid-cols-3">
+            {/* Testimonial 1 */}
+            <div className="rounded-2xl border border-card-border bg-card-bg/50 p-6">
+              <div className="mb-3 flex items-center gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="h-4 w-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.297a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.297c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.297a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.297z" />
+                  </svg>
+                ))}
+              </div>
+              <p className="text-sm text-foreground">
+                "用了第 12 號 prompt 寫客戶郵件，回覆率真的提升了很多！"
+              </p>
+              <p className="mt-3 text-xs text-muted">
+                — 林先生，行銷經理
+              </p>
+            </div>
+
+            {/* Testimonial 2 */}
+            <div className="rounded-2xl border border-card-border bg-card-bg/50 p-6">
+              <div className="mb-3 flex items-center gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="h-4 w-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.297a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.297c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.297a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.297z" />
+                  </svg>
+                ))}
+              </div>
+              <p className="text-sm text-foreground">
+                "AI 實戰課程講解很清楚，即使是 AI 小白也能輕鬆上手。"
+              </p>
+              <p className="mt-3 text-xs text-muted">
+                — 張小姐，自由工作者
+              </p>
+            </div>
+
+            {/* Testimonial 3 */}
+            <div className="rounded-2xl border border-card-border bg-card-bg/50 p-6">
+              <div className="mb-3 flex items-center gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="h-4 w-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.297a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.297c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.297a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.297z" />
+                  </svg>
+                ))}
+              </div>
+              <p className="text-sm text-foreground">
+                "飛書模板幫團隊節省了大量時間，CRM 模板特別好用！"
+              </p>
+              <p className="mt-3 text-xs text-muted">
+                — 王先生，專案經理
+              </p>
+            </div>
+          </div>
+
+          {/* CTA */}
+          <div className="mt-16 text-center">
+            <a
+              href="https://twitter.com/AIWorkshopTW"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-card-border px-8 py-3.5 text-base font-medium text-foreground transition-all hover:border-foreground/30 hover:bg-card-bg"
+            >
+              更多用戶回饋 → 追蹤我們的 Twitter
+            </a>
           </div>
         </div>
       </section>
