@@ -1,0 +1,10 @@
+{
+  "name": "digital-product-landing",
+  "buildCommand": "pnpm build",
+  "outputDir": ".next",
+  "framework": "nextjs",
+  "env": {
+    "BUILD_COMMAND": "pnpm build",
+    "OUTPUT_DIR": ".next"
+  }
+}
