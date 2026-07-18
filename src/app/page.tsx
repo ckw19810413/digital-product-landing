@@ -12,7 +12,7 @@ const products = [
       "高品質、經過驗證的繁體中文 AI Prompt 集合。100 個高質量 prompt，不是 500 個通用 prompt 的廉價合集。",
     price: "$49",
     priceNote: "一次性",
-    gumroadUrl: "https://cdkw19810413.gumroad.com/l/ai-prompt-library", // TODO: 替換為實際連結
+    gumroadUrl: "https://slashmaster6.gumroad.com/l/saxrwt",
     github: "https://github.com/ckw19810413/traditional-ai-prompt-library",
     tags: ["AI", "Prompt", "繁體中文"],
     gradient: "from-blue-500 to-blue-600",
@@ -32,7 +32,7 @@ const products = [
       "從零到進階的 AI 應用教學。4 單元 17 堂完整課程，繁體中文教學，學完就能用。",
     price: "$297",
     priceNote: "早鳥價，原價 $497",
-    gumroadUrl: "https://cdkw19810413.gumroad.com/l/ai-course", // TODO: 替換為實際連結
+    gumroadUrl: "https://slashmaster6.gumroad.com/l/mgtpcn",
     github: "https://github.com/ckw19810413/ai-practical-course-tw",
     tags: ["AI", "課程", "繁體中文"],
     gradient: "from-violet-500 to-violet-600",
@@ -52,7 +52,7 @@ const products = [
       "中文世界第一套專業的飛書/釘釘工作模板。包含銷售儀表板、CRM、專案管理等 13+ 套模板。",
     price: "$29-$69",
     priceNote: "／套（全部套組 $197）",
-    gumroadUrl: "https://cdkw19810413.gumroad.com/l/feishu-templates", // TODO: 替換為實際連結
+    gumroadUrl: "https://slashmaster6.gumroad.com/l/obpgqo",
     github: "https://github.com/ckw19810413/feishu-template-marketplace",
     tags: ["飛書", "模板", "生產力"],
     gradient: "from-cyan-500 to-teal-500",
