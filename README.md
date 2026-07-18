@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Digital Product Landing Page
+
+> A high-conversion landing page for AI-powered digital products. Built with Next.js, TypeScript, and Tailwind CSS.
+
+![Screenshot](screenshot.png)
+
+> **🚧 Note:** Screenshot placeholder — replace `screenshot.png` with an actual page preview.
+
+## Features
+
+- 🎯 **Optimized for Conversion** — Clean, modern design focused on driving sales
+- 🎨 **AI Brand Identity** — Designed specifically for AI/digital product brands
+- 📱 **Fully Responsive** — Looks great on desktop, tablet, and mobile
+- ⚡ **Fast & Performant** — Built on Next.js with SSR and optimized assets
+- 🌐 **SEO Ready** — Proper meta tags, Open Graph, and structured data
+- 🧩 **Modular Components** — Easy to customize and extend
+
+## Tech Stack
+
+| Technology | Purpose |
+|-----------|---------|
+| [Next.js](https://nextjs.org/) (v16) | React framework with SSR/SSG |
+| [TypeScript](https://www.typescriptlang.org/) | Type-safe development |
+| [Tailwind CSS](https://tailwindcss.com/) (v4) | Utility-first styling |
+| ESLint | Code quality & consistency |
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+digital-product-landing/
+├── public/          # Static assets (images, fonts)
+├── src/             # Application source code
+│   ├── app/        # Next.js App Router pages
+│   └── ...
+├── next.config.js   # Next.js configuration
+├── tailwind.config.ts
+├── tsconfig.json
+└── package.json
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Deploy to [Vercel](https://vercel.com/) for the best Next.js experience, or any platform that supports Next.js.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Built with ❤️ by [KWC](https://github.com/ckw19810413)
