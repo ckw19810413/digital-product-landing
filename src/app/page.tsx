@@ -64,6 +64,66 @@ const products = [
       </svg>
     ),
   },
+  {
+    id: "taiwan-etf-dashboard",
+    title: "台股 ETF 智能分析儀表板",
+    slug: "taiwan-etf-dashboard",
+    description:
+      "專業級台股 ETF 財務分析儀表板，即時數據爬取與深度財務指標分析。Premium 會員專屬。",
+    price: "$19",
+    priceNote: "／月",
+    gumroadUrl: "https://slashmaster6.gumroad.com/l/kbxuuc",
+    github: "https://github.com/ckw19810413/twse-etf-fa-hermes",
+    tags: ["ETF", "台股", "金融分析", "儀表板"],
+    gradient: "from-emerald-500 to-emerald-600",
+    iconBg: "bg-emerald-500/10",
+    iconColor: "text-emerald-400",
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" />
+      </svg>
+    ),
+  },
+  {
+    id: "feishu-template-bundle",
+    title: "飛書模板套組",
+    slug: "feishu-template-bundle",
+    description:
+      "中文世界第一套專業的飛書/釘釘工作模板套組。一次獲得所有 13+ 套模板，工作效率翻倍。",
+    price: "$197",
+    priceNote: "全選套組價",
+    gumroadUrl: "https://slashmaster6.gumroad.com/l/xohjh",
+    github: "https://github.com/ckw19810413/feishu-template-marketplace",
+    tags: ["飛書", "套組", "商務", "工作模板"],
+    gradient: "from-amber-500 to-orange-500",
+    iconBg: "bg-amber-500/10",
+    iconColor: "text-amber-400",
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+      </svg>
+    ),
+  },
+  {
+    id: "ai-course-comprehensive",
+    title: "繁體中文 AI 實戰課程",
+    slug: "ai-course-comprehensive",
+    description:
+      "4 單元 17 堂完整課程，從零到進階的 AI 應用教學。繁體中文教學，學完就能用，包含實作專案。",
+    price: "$297",
+    priceNote: "完整課程",
+    gumroadUrl: "https://slashmaster6.gumroad.com/l/vzalgb",
+    github: "https://github.com/ckw19810413/ai-practical-course-tw",
+    tags: ["AI", "課程", "完整教學", "繁體中文"],
+    gradient: "from-pink-500 to-rose-500",
+    iconBg: "bg-pink-500/10",
+    iconColor: "text-pink-400",
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
+      </svg>
+    ),
+  },
 ] as const;
 
 function ProductCard({ product }: { product: (typeof products)[number] }) {
@@ -209,7 +269,7 @@ export default function Home() {
         {/* Stats */}
         <div className="relative mt-16 flex flex-wrap justify-center gap-8 sm:gap-16">
           <div className="text-center">
-            <div className="text-2xl font-bold text-foreground">3</div>
+            <div className="text-2xl font-bold text-foreground">6</div>
             <div className="text-xs text-muted">精選產品</div>
           </div>
           <div className="text-center">
